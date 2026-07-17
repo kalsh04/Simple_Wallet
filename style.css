@@ -1,0 +1,156 @@
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    background: #0A0E1A;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #A78BFA;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #94A3B8;
+    font-size: 1rem;
+}
+
+/* CARDS */
+.card {
+    background: #1A2235;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 15px auto;
+    max-width: 600px;
+    border: 1px solid #7C3AED;
+}
+
+.card h2 {
+    color: #A78BFA;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #94A3B8;
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+
+/* SPANS (address and balance) */
+span {
+    color: #06B6D4;
+    font-weight: bold;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    background: #0D1321;
+    border: 1px solid #7C3AED;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+input::placeholder {
+    color: #94A3B8;
+}
+
+/* BUTTONS */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #7C3AED;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #A78BFA;
+}
+
+/* DISCONNECT BUTTON */
+#disconnectBtn {
+    background: #EF4444;
+    margin-top: 10px;
+}
+
+#disconnectBtn:hover {
+    background: #FCA5A5;
+}
+
+/* SEND STATUS MESSAGE */
+#sendStatus {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* TRANSACTION LIST */
+#txList {
+    color: #94A3B8;
+}
+
+.tx-item {
+    background: #0D1321;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0;
+    border-left: 3px solid #7C3AED;
+}
+
+.tx-item p {
+    font-size: 0.85rem;
+    margin: 4px 0;
+}
+
+/* HIDDEN CLASS */
+.hidden {
+    display: none;
+}
+
+/* SUCCESS AND ERROR COLORS */
+.success {
+    color: #10B981;
+}
+
+.error {
+    color: #EF4444;
+}
+/* GAS ESTIMATE BOX */
+.gas-box {
+    background: #0D1321;
+    border: 1px solid #F59E0B;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+.gas-box p {
+    color: #F59E0B;
+    margin: 5px 0;
+}

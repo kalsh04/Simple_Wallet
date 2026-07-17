@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Wallet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🦊 Simple Wallet</h1>
+        <p>Powered by Ethereum Blockchain</p>
+    </div>
+
+    <!-- NETWORK DETECTOR -->
+    <div class="card" id="network-section">
+        <h2>🌐 Network Status</h2>
+        <p>Network: <span id="networkName">Not Connected</span></p>
+        <p id="networkWarning"></p>
+    </div>
+
+    <!-- CONNECT WALLET SECTION -->
+    <div class="card" id="connect-section">
+        <h2>Connect Your Wallet</h2>
+        <p>Connect MetaMask to get started</p>
+        <button id="connectBtn">🔌 Connect Wallet</button>
+    </div>
+
+    <!-- ACCOUNT INFO SECTION -->
+    <div class="card hidden" id="account-section">
+        <h2>💼 My Wallet</h2>
+        <p>
+            Address: <span id="userAddress">-</span>
+            <button id="copyBtn" style="width:auto; padding: 5px 10px; 
+            font-size: 0.8rem; margin-left: 10px;">
+            📋 Copy
+            </button>
+        </p>
+        <p>Balance: <span id="userBalance">-</span> ETH</p>
+        <button id="refreshBtn">🔄 Refresh Balance</button>
+        <button id="disconnectBtn">🔌 Disconnect</button>
+    </div>
+
+    <!-- SEND ETH SECTION -->
+    <div class="card hidden" id="send-section">
+        <h2>📤 Send ETH</h2>
+        <input type="text" id="toAddress" 
+        placeholder="Receiver address (0x...)"/>
+        <input type="text" id="sendAmount" 
+        placeholder="Amount in ETH (e.g. 0.001)"/>
+
+        <!-- GAS FEE ESTIMATOR -->
+        <div id="gasEstimate" class="gas-box hidden">
+            <p>⛽ Estimated Gas Fee: 
+                <span id="gasFee">-</span> ETH
+            </p>
+            <p>💰 Total Cost: 
+                <span id="totalCost">-</span> ETH
+            </p>
+        </div>
+
+        <button id="estimateBtn">⛽ Estimate Gas Fee</button>
+        <button id="sendBtn">🚀 Send ETH</button>
+        <p id="sendStatus"></p>
+    </div>
+
+    <!-- TRANSACTION HISTORY -->
+    <div class="card hidden" id="history-section">
+        <h2>📋 Transaction History</h2>
+        <div id="txList">No transactions yet</div>
+    </div>
+
+    <script src="ethers.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
