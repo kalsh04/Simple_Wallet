@@ -23,6 +23,9 @@ const connectSection = document.getElementById('connect-section');
 const accountSection = document.getElementById('account-section');
 const sendSection = document.getElementById('send-section');
 const historySection = document.getElementById('history-section');
+const networkSection = document.getElementById('network-section');
+const walletActions = document.getElementById('wallet-actions');
+const appShell = document.querySelector('.app-shell');
 
 let provider;
 let signer;
@@ -47,6 +50,10 @@ connectBtn.addEventListener('click', async () => {
         await detectNetwork();
         await loadTransactionHistoryForCurrentAccount();
 
+        networkSection.classList.remove('hidden');
+        walletActions.classList.remove('hidden');
+        appShell.classList.add('connected');
+
         connectSection.classList.add('hidden');
         accountSection.classList.remove('hidden');
         sendSection.classList.remove('hidden');
@@ -68,7 +75,8 @@ async function detectNetwork() {
     } else if (chainId === 1) {
         networkName.textContent = 'Ethereum Mainnet ⚠️';
         networkName.style.color = '#EF4444';
-        networkWarning.textContent = '⚠️ WARNING: You are on Mainnet! Switch to Sepolia to avoid spending real money!';
+        networkWarning.textContent =
+            '⚠️ WARNING: You are on Mainnet! Switch to Sepolia to avoid spending real money!';
         networkWarning.className = 'error';
     } else {
         networkName.textContent = 'Unknown Network (Chain ID: ' + chainId + ')';
@@ -180,7 +188,6 @@ sendBtn.addEventListener('click', async () => {
         await loadTransactionHistoryForCurrentAccount();
 
         gasEstimate.classList.add('hidden');
-
         toAddress.value = '';
         sendAmount.value = '';
     } catch (error) {
@@ -296,6 +303,9 @@ disconnectBtn.addEventListener('click', () => {
     networkName.textContent = 'Not Connected';
     networkWarning.textContent = '';
     gasEstimate.classList.add('hidden');
+    networkSection.classList.add('hidden');
+    walletActions.classList.add('hidden');
+    appShell.classList.remove('connected');
 
     connectSection.classList.remove('hidden');
     accountSection.classList.add('hidden');

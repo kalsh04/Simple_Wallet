@@ -29,11 +29,11 @@ body {
 }
 
 .topbar {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto 24px;
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 16px;
 }
 
@@ -47,14 +47,26 @@ body {
     color: var(--muted);
 }
 
-.network-card {
-    min-width: 250px;
+.topbar-right {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.network-card,
+.wallet-actions {
     padding: 14px 16px;
     border-radius: 16px;
     background: rgba(15, 23, 42, 0.86);
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: var(--shadow);
     backdrop-filter: blur(12px);
+}
+
+.network-card {
+    min-width: 240px;
 }
 
 .network-card h2 {
@@ -68,20 +80,31 @@ body {
     color: var(--muted);
 }
 
-.network-card .success {
-    color: var(--accent-2);
-}
-
-.network-card .error {
-    color: var(--danger);
+.wallet-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 .app-shell {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 180px);
+}
+
+.app-shell.connected {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
+    align-items: start;
+    min-height: auto;
+}
+
+.app-shell.connected #history-section {
+    grid-column: 1 / -1;
 }
 
 .card {
@@ -91,6 +114,46 @@ body {
     padding: 24px;
     box-shadow: var(--shadow);
     backdrop-filter: blur(12px);
+}
+
+.connect-hero {
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+    padding: 44px 36px;
+}
+
+.hero-icon {
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+}
+
+.connect-hero h2 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+}
+
+.connect-hero p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-features span {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: var(--muted);
 }
 
 .card h2 {
@@ -148,8 +211,11 @@ button:hover {
     border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-#history-section {
-    grid-column: 1 / -1;
+.mini-btn {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    margin-left: 10px;
 }
 
 #txList {
@@ -202,11 +268,15 @@ button:hover {
         align-items: stretch;
     }
 
-    .network-card {
-        min-width: 100%;
+    .topbar-right {
+        justify-content: flex-start;
     }
 
-    .app-shell {
+    .wallet-actions {
+        flex-wrap: wrap;
+    }
+
+    .app-shell.connected {
         grid-template-columns: 1fr;
     }
 }

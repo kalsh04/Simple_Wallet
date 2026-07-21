@@ -14,32 +14,42 @@
             <p>Powered by Ethereum Blockchain</p>
         </div>
 
-        <div class="card network-card hidden" id="network-section">
-            <h2>🌐 Network Status</h2>
-            <p>Network: <span id="networkName">Not Connected</span></p>
-            <p id="networkWarning"></p>
+        <div class="topbar-right">
+            <div class="card network-card hidden" id="network-section">
+                <h2>🌐 Network Status</h2>
+                <p>Network: <span id="networkName">Not Connected</span></p>
+                <p id="networkWarning"></p>
+            </div>
+
+            <div class="wallet-actions hidden" id="wallet-actions">
+                <button id="refreshBtn">🔄 Refresh Balance</button>
+                <button id="disconnectBtn">🔌 Disconnect</button>
+            </div>
         </div>
     </div>
 
     <div class="app-shell">
-        <div class="card" id="connect-section">
-            <h2>Connect Your Wallet</h2>
-            <p>Connect MetaMask to get started</p>
+        <div class="card connect-hero" id="connect-section">
+            <div class="hero-icon">🦊</div>
+            <h2>Secure wallet access for your ETH</h2>
+            <p>Connect MetaMask, manage your balance, estimate gas, send transfers, and review your transaction history in one clean dashboard.</p>
+
             <button id="connectBtn">🔌 Connect Wallet</button>
+
+            <div class="hero-features">
+                <span>⚡ Fast</span>
+                <span>🔐 Secure</span>
+                <span>📡 Live Network</span>
+            </div>
         </div>
 
         <div class="card hidden" id="account-section">
             <h2>💼 My Wallet</h2>
             <p>
                 Address: <span id="userAddress">-</span>
-                <button id="copyBtn" style="width:auto; padding: 5px 10px; 
-                font-size: 0.8rem; margin-left: 10px;">
-                📋 Copy
-                </button>
+                <button id="copyBtn" class="mini-btn">📋 Copy</button>
             </p>
             <p>Balance: <span id="userBalance">-</span> ETH</p>
-            <button id="refreshBtn">🔄 Refresh Balance</button>
-            <button id="disconnectBtn">🔌 Disconnect</button>
         </div>
 
         <div class="card hidden" id="send-section">
